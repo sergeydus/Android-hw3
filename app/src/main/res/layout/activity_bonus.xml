@@ -2,28 +2,44 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/win_message"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorAndroidGreen"
-    tools:context=".MainActivity">
+    tools:context=".LoserActivity">
 
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/wienner"
-        />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Congratulations You Are A Wienner!"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        android:textColor="#F321DE"
-        android:textSize="45sp"
-        android:textStyle="bold|italic" />
+        android:id="@+id/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="You Win"
+        android:textColor="#f00"
+        android:textSize="60sp" />
+    <TextView
+        android:id="@+id/TextAnswer"
+        android:layout_below="@id/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="You answer "
+        android:textColor="#f00"
+        android:textSize="50dp" />
+
+    <Button
+        android:id="@+id/ButtonReStart"
+        android:layout_width="600px"
+        android:layout_height="600px"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/TextAnswer"
+        android:background="@color/colorPrimaryDark"
+        android:text="tab here if you want to try again"
+        android:textSize="20dp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/TextView"
+        android:src="@drawable/wienner" />
 </RelativeLayout>

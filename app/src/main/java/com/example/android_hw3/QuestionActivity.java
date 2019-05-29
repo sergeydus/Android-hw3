@@ -61,7 +61,7 @@ public class QuestionActivity extends AppCompatActivity {
                             lose.putExtra("TotalQuestions",QuestionNumber);
                             lose.putExtra("Answered",answeredCorrectly);
                             // intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // Adds the FLAG_ACTIVITY_NO_HISTORY flag
-                            startActivity(lose);//TODO: go to result page , if all answers are correct go to the BONUS PAGE
+                            startActivity(lose);
                         }
                         if(answeredCorrectly==QuestionNumber)
                         {
@@ -76,7 +76,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     }
-public void openBonusActivity(){
+    public void openBonusActivity(){
         Intent win=new Intent(this,BonusActivity.class);
         startActivity(win);
 }

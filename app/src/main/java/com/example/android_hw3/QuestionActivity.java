@@ -54,21 +54,22 @@ public class QuestionActivity extends AppCompatActivity {
                         answered++;
                         getQuestion(view);
                     }
+                        if(answered>=QuestionNumber){
+                        if(answeredCorrectly<QuestionNumber)
+                        {
+                            Intent lose= new Intent(QuestionActivity.this,LoserActivity.class);
+                            lose.putExtra("TotalQuestions",QuestionNumber);
+                            lose.putExtra("Answered",answeredCorrectly);
+                            // intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // Adds the FLAG_ACTIVITY_NO_HISTORY flag
+                            startActivity(lose);//TODO: go to result page , if all answers are correct go to the BONUS PAGE
+                        }
+                        if(answeredCorrectly==QuestionNumber)
+                        {
+                            openBonusActivity();
+                        }
+                    }
                 }
-                else{
-                   if(answeredCorrectly<QuestionNumber)
-                   {
-                       Intent lose= new Intent(QuestionActivity.this,LoserActivity.class);
-                       lose.putExtra("TotalQuestions",QuestionNumber);
-                       lose.putExtra("Answered",answeredCorrectly);
-                       // intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // Adds the FLAG_ACTIVITY_NO_HISTORY flag
-                       startActivity(lose);//TODO: go to result page , if all answers are correct go to the BONUS PAGE
-                   }
-                   if(answeredCorrectly==QuestionNumber)
-                   {
-                       openBonusActivity();
-                   }
-                }
+
             }
         });
        getQuestion(this.findViewById(android.R.id.content));

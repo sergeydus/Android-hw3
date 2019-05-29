@@ -7,23 +7,29 @@
     tools:context=".LoserActivity">
 
 
-
-
     <TextView
-    android:id="@+id/TextView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:layout_marginEnd="55dp"
-    android:text="You Lose"
-    android:textSize="100dp" />
+        android:id="@+id/TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="55dp"
+        android:text="You Lose"
+        android:textColor="#f00"
+        android:textSize="100dp" />
 
     <Button
         android:id="@+id/ButtonReStart"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:background="@color/colorPrimaryDark"
+        android:layout_height="20dp"
         android:layout_centerInParent="true"
-        android:text="tab here if you want to try again" />
+        android:layout_below="@id/TextView"
+        android:background="@color/colorPrimaryDark"
+        android:text="tab here if you want to try again"
+        android:textSize="20dp" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/TextView"
+        android:src="@drawable/giphylose" />
 </RelativeLayout>

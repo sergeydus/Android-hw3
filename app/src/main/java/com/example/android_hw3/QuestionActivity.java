@@ -77,7 +77,7 @@ public class QuestionActivity extends AppCompatActivity {
 
     }
     public void openBonusActivity(){
-        Intent win=new Intent(this,BonusActivity.class);
+        Intent win=new Intent(QuestionActivity.this,BonusActivity.class);
         startActivity(win);
 }
     public void getQuestion(View view) {

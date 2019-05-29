@@ -1,6 +1,7 @@
 
 package com.example.android_hw3;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -55,7 +56,18 @@ public class QuestionActivity extends AppCompatActivity {
                     }
                 }
                 else{
-                    //TODO: go to result page , if all answers are correct go to the BONUS PAGE
+                   if(answeredCorrectly<QuestionNumber)
+                   {
+                       Intent lose= new Intent(QuestionActivity.this,LoserActivity.class);
+                       lose.putExtra("TotalQuestions",QuestionNumber);
+                       lose.putExtra("Answered",answeredCorrectly);
+                       // intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // Adds the FLAG_ACTIVITY_NO_HISTORY flag
+                       startActivity(lose);//TODO: go to result page , if all answers are correct go to the BONUS PAGE
+                   }
+                   if(answeredCorrectly==QuestionNumber)
+                   {
+                       openBonusActivity();
+                   }
                 }
             }
         });
@@ -63,7 +75,10 @@ public class QuestionActivity extends AppCompatActivity {
 
 
     }
-
+public void openBonusActivity(){
+        Intent win=new Intent(this,BonusActivity.class);
+        startActivity(win);
+}
     public void getQuestion(View view) {
         Server.getTriviaQuestion(new Server.HandleQuestion() {
             @Override

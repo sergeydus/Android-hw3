@@ -13,7 +13,7 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private EditText QuestionNumber;
-    private Button ButtonStartQuiz;
+    private Button ButtonStartQuiz;//hgfchgf
     int Questions=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

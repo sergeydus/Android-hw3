@@ -20,7 +20,7 @@ public class LoserActivity extends AppCompatActivity {
             }
         });
     }
-    }
+    
     public void openTriviaActivity(){
         Intent intent = new Intent(this, MainActivity.class);
         // intent.setFlags(intent.getFlags() | Intent.FLAG_ACTIVITY_NO_HISTORY); // Adds the FLAG_ACTIVITY_NO_HISTORY flag
